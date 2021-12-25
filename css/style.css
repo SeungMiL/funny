@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
+
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
 body{
@@ -11,6 +16,9 @@ body{
     min-height: 100vh;
     background: #e8ffe8;
 }
+
+
+/* 트리 */
 
 .tree{
     position: relative;
@@ -86,8 +94,53 @@ body{
     left: 0;
     width: 300px;
     height: 300px;
-    background: #0002;
+    background: #0000000f;
     transform-style: preserve-3d;
     transform: rotateX(90deg) translateZ(-500px);
     filter: blur(20px);
 }
+
+
+.tree div.text span {
+    position: absolute;
+    top: 350px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(90deg, #69c069, #77dd77); */
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    transform-origin: bottom;
+    /* border-bottom: 10px solid #00000019; */
+    transform: rotateY(calc(90deg*var(--i))) 
+     translateZ(173px);
+     display: flex;
+     justify-content: center;
+     align-items: flex-end;
+     color: #ff4242;
+     font-size: 6.5em;
+     text-transform: uppercase;
+     line-height: 6.5em;
+     -webkit-text-stroke: 3px #fff;
+     font-weight: 700;
+     transform-style: preserve-3d;
+}
+
+.tree div.text span:nth-child(2) {
+    font-size: 4.3em;
+    line-height: 9.7em;
+}
+
+
+
+.tree div.text span::before{
+    content: attr(data-text);
+    position: absolute;
+    transform-origin: bottom;
+    transform: rotateX(-90deg) translateY(300px);
+    bottom: 7px;
+    -webkit-text-stroke: 0px #fff;
+    color: rgba(0,0,0,0.1);
+    filter: blur(5px);
+}
+
+
